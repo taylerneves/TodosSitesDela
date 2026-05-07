@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #ede2f8;
+    --texto: #2d1b3d;
+    --card: #ffffff;
+    --destaque: #a855f7;
+    --destaque-escuro: #9333ea;
+    --borda: #6c4992;
+}
+
+body.escuro {
+    --fundo: #140f1f;
+    --texto: #f5edff;
+    --card: #21172f;
+    --destaque: #c084fc;
+    --destaque-escuro: #a855f7;
+    --borda: #3b2b52;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+/* MENU */
+
+header {
+    background: var(--destaque);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    list-style: none;
+}
+
+#menu a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#menu a:hover {
+    transform: scale(1.1);
+}
+
+/* MAIN */
+
+main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+}
+
+/* PERFIL */
+
+#inicio {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    position: sticky;
+    top: 90px;
+    height: fit-content;
+    border: 1px solid var(--borda);
+}
+
+.foto {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    outline: 5px solid var(--destaque);
+    margin-bottom: 25px;
+}
+
+#inicio h1 {
+    color: var(--destaque);
+    margin-bottom: 15px;
+}
+
+.frase {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--destaque);
+}
+
+.tempo-namoro {
+    margin-top: 30px;
+}
+
+.tempo-box {
+    margin-top: 10px;
+    background: var(--destaque);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* ARTICLES */
+
+article {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--borda);
+}
+
+article h2 {
+    color: var(--destaque);
+    margin-bottom: 20px;
+}
+
+/* VIDEO */
+
+.video-container video {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* CONTADOR */
+
+.contador-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.contador-box {
+    background: var(--destaque);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contador-box span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* PROJETOS */
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.projeto-card {
+    background: var(--card);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    position: relative;
+    transition: 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+}
+
+.tag-novidade {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff1744;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.iframe-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.iframe-wrapper iframe {
+    width: 1200px;
+    height: 700px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%) scale(0.35);
+    transform-origin: top center;
+
+    border: none;
+    pointer-events: none;
+}
+
+.projeto-info {
+    padding: 20px;
+}
+
+.projeto-info h3 {
+    margin-bottom: 10px;
+}
+
+.projeto-info p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--destaque);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--destaque-escuro);
+}
+/* ===================================
+   DATAS IMPORTANTES
+=================================== */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.timeline-item {
+    background: var(--fundo);
+    border-left: 5px solid var(--destaque);
+    padding: 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item .data {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--destaque);
+    font-size: 15px;
+}
+
+.timeline-item p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.timeline-item.destaque {
+    background: linear-gradient(
+        135deg,
+        var(--destaque),
+        #ff8db2
+    );
+
+    color: white;
+}
+
+.timeline-item.destaque .data {
+    color: white;
+}
+
+/* ===================================
+   PROJETOS RESPONSIVOS
+=================================== */
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    #inicio {
+        position: relative;
+        top: 0;
+    }
+
+    .foto {
+        width: 180px;
+        height: 180px;
+    }
+}
+/* ===================================
+   DATAS IMPORTANTES
+=================================== */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.timeline-item {
+    background: var(--fundo);
+    border-left: 5px solid var(--destaque);
+    padding: 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item .data {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--destaque);
+    font-size: 15px;
+}
+
+.timeline-item p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.timeline-item.destaque {
+    background: linear-gradient(
+        135deg,
+        var(--destaque),
+        #ff8db2
+    );
+
+    color: white;
+}
+
+.timeline-item.destaque .data {
+    color: white;
+}
+
+/* ===================================
+   PROJETOS RESPONSIVOS
+=================================== */
+
+@media (max-width: 800px) {
+
+    .projeto-card {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        min-height: 140px;
+    }
+
+    .iframe-wrapper {
+        width: 140px;
+        min-width: 140px;
+        height: 100%;
+        border-right: 1px solid var(--borda);
+    }
+
+    .iframe-wrapper iframe {
+        width: 900px;
+        height: 700px;
+
+        transform:
+            translateX(-50%)
+            scale(0.22);
+
+        transform-origin: top center;
+    }
+
+    .projeto-info {
+        flex: 1;
+        padding: 15px;
+    }
+
+    .projeto-info h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .projeto-info p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .tag-novidade {
+        top: 8px;
+        left: 8px;
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+}
+/* ===================================
+   NOTEBOOK / TELAS MÉDIAS
+=================================== */
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+
+    main {
+        grid-template-columns: 320px 1fr;
+        gap: 20px;
+    }
+
+    /* PROJETOS EM 2 COLUNAS */
+    .projetos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* CARD */
+    .projeto-card {
+        min-height: 420px;
+    }
+
+    /* ÁREA DO IFRAME */
+    .iframe-wrapper {
+        height: 170px;
+    }
+
+    /* AJUSTE DO SITE DENTRO DO CARD */
+    .iframe-wrapper iframe {
+        width: 1200px;
+        height: 700px;
+
+        transform:
+            translateX(-50%)
+            scale(0.28);
+
+        transform-origin: top center;
+    }
+
+    /* TEXTO */
+    .projeto-info {
+        padding: 18px;
+    }
+
+    .projeto-info h3 {
+        font-size: 20px;
+    }
+
+    .projeto-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* BOTÃO */
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
